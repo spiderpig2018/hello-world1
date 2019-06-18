@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../demo/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="../demo/css/table-style.css" />
+    
+    <script src="../common/js/jquery-2.1.4.min.js"></script>
+    <script src="../common/js/bootstrap.min.js"></script>
+    
+    <style>
+        * {
+            font-size: 15px;
+        }
+
+        .form-group {
+            margin-right: 20px;
+            margin-top: 20px;
+        }
+
+        .form-group input {
+            width: 122px !important;
+            margin-left: 5px;
+        }
+
+        .inputbox {
+            /* border: brown solid 1px; */
+            margin-bottom: 20px;
+        }
+
+        .inputbox textarea {
+            width: 100%;
+
+        }
+
+        .inputbox p {
+            background: brown;
+            color: #ffffff;
+            padding: 3px;
+
+        }
+
+        .inputbtn button {
+            margin-top: 20px;
+            /* width: 90px; */
+            margin-left: 20px;
+        }
+    </style>
+    <title>供应单录入</title>
+</head>
+
+<body>
+     
+    <div class="container ">
+        <h3>供应单录入</h3>
+        <div class="inputbox">
+            <p>基础信息/必填</p>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="" style="margin-left: 0px;">名称</label>
+                    <input type="text" class="form-control" id="PName" placeholder="名称">
+                </div>
+               
+               
+                <div class="form-group">
+                        <label for="">销售单号</label>
+                        <input type="text" class="form-control" id="client" placeholder="销售单号">
+                    </div>
+               
+                <div class="form-group">
+                    <label for="">入住时间</label>
+                    <input type="text" class="form-control" id="Start" placeholder="入住时间">
+                </div>
+
+                <div class="form-group">
+                    <label for="">离店时间</label>
+                    <input type="text" class="form-control" id="End" placeholder="离店时间">
+                </div>
+                <div class="form-group">
+                  <label for="">供应商</label>
+                  <input list="list" id="Supplier" class="form-control" />
+                  <datalist id="list">
+                      <option value="111"></option>
+                      <option value="222"></option>         
+                  </datalist>
+              </div>
+                <div class="form-group">
+                    <label for="">报价：</label>
+                    <input type="text" class="form-control" id="Price" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="">币种</label>
+                    <input list="cny" id="Currency" class="form-control" />
+                    <datalist id="cny">
+                        <option value="111"></option>
+                        <option value="222"></option>
+                    </datalist>
+                </div>
+                
+                <div class="form-group">
+                        <label for="">类型</label>
+                        <input type="text" class="form-control" id="Type" placeholder="类型">
+                    </div>
+                
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="inputbox">
+                    <p>订单备注/非必填</p>
+                    <textarea class="form-control" rows="3" id="Remark"></textarea>
+                </div>
+                <div class="inputbtn">
+                    <button type="button" onclick="addinput()" class="btn btn-primary">录入供应单</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消录入</button>
+                </div>
+            </div>
+         
+        </div>
+       
+        
+    </div>
+
+
+    <script src="../common/laydate/laydate.js"></script>
+    <!-- 改成你的路径 -->
+
+    <script src="../common/finance.js"></script>
+    <script src="../common/js/inputorder.js"></script>
+    <script>
+        lay('#version').html('-v' + laydate.v);
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#instre', //指定元素
+        });
+
+        laydate.render({
+            elem: '#instreout' //指定元素
+        });
+    </script>
+</body>
+
+</html>

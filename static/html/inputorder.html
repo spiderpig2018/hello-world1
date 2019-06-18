@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../demo/css/style.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" type="text/css" href="../demo/css/table-style.css" />
+    <link href="../demo/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="../css/finance.css">
+    <script src="../common/js/jquery-2.1.4.min.js"></script>
+    <script src="../common/js/bootstrap.min.js"></script>
+    <style>
+        * {
+            font-size: 15px;
+        }
+
+        html,
+        body {
+            height: 100%;
+            background: #ffffff;
+        }
+
+        .form-group {
+            margin-right: 20px;
+            margin-top: 20px;
+        }
+
+        .form-group input {
+            width: 122px !important;
+            margin-left: 5px;
+
+        }
+
+        .inputbox {
+            /* border: brown solid 1px; */
+            margin-bottom: 20px;
+        }
+
+        .inputbox textarea {
+            width: 100%;
+
+        }
+
+        .inputbox p {
+            background: brown;
+            color: #ffffff;
+            padding: 3px;
+
+        }
+
+        .inputbtn button {
+            margin-top: 20px;
+            /* width: 90px; */
+            margin-left: 20px;
+        }
+
+
+        .form-group label {
+            font-weight: 400;
+            width: 63px;
+            text-align: center;
+        }
+
+        .form-inline .form-control {
+            display: inline-block;
+            width: 286px !important;
+            vertical-align: middle;
+            margin-left: unset;
+        }
+
+        .input-group-addon,
+        .input-group-btn {
+            width: 16%;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+
+        .table>thead>tr>th,
+        .table>tbody>tr>th,
+        .table>tfoot>tr>th,
+        .table>thead>tr>td,
+        .table>tbody>tr>td,
+        .table>tfoot>tr>td {
+            color: #2d1e1e !important;
+        }
+    </style>
+    <title>订单录入</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <a href="../index.html">返回菜单</a>
+        </div>
+        <h4>销售订单录入</h4>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="inputbox">
+                    <p>基础信息/必填</p>
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="">销售单号</label>
+                            <input type="text" class="form-control" id="bill_order_id" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="" style="margin-left: 0px;">产品</label>
+                            <input type="text" class="form-control" id="order_name" placeholder="产品名称">
+                        </div>
+                        <div class="form-group">
+                            <label for="">销售平台</label>
+                            <select class="form-control" id="suulp">
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">客户名</label>
+                            <input type="text" class="form-control" id="client" placeholder="姓名">
+                        </div>
+                        <div class="form-group">
+                            <label for="">成人</label>
+                            <input type="number" class="form-control" id="adult_num" placeholder="人数">
+                        </div>
+                        <div class="form-group">
+                            <label for="">儿童</label>
+                            <input type="number" class="form-control" id="children" placeholder="人数">
+                        </div>
+                        <div class="form-group">
+                            <label for="">售价</label>
+                            <input type="text" class="form-control" id="price" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">入住时间</label>
+                            <input type="date" class="form-control" id="check_in" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">离店时间</label>
+                            <input type="date" class="form-control" id="check_out" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">货币</label>
+                            <select class="form-control" id="Currency">
+                                <option value="1">CNY</option>
+                                <option value="2">HKD</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">汇率</label>
+                            <input type="text" class="form-control" id="Rate" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">类型</label>
+                            <input list="answers" id="type" class="form-control" value="" placeholder="酒店">
+                            <datalist id="answers">
+                                <option data-value="0">酒店</option>
+                                <option data-value="1">交通</option>
+                                <option data-value="2">票务</option>
+                                <option data-value="3">其他</option>
+                            </datalist>
+                            <input type="hidden" name="type" id="type-hidden">
+                        </div>
+                        <div class="form-group">
+                            <label for="">接单员</label>
+                            <select class="form-control" id="account_">
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">备注</label>
+                            <input type="text" class="form-control" id="description" placeholder="">
+                        </div>
+
+                    </form>
+
+                </div>
+                <button type="button" class="btn btn-primary" onclick="isSen()">录入订单</button>
+            </div>
+            <div class="col-sm-12">
+
+                <!-- 新增模态框（Modal） -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    ×
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    添加供应单
+                                </h4>
+                            </div>
+                            <form id="form_data">
+                                <div class="modal-body">
+                                 
+                                    <div class="input-group w3_w3layouts">
+                                        <span class="input-group-addon" id="sizing-addon2">供应单号</span>
+                                        <input type="text" class="form-control" id="SupplierId" placeholder="供应单号">
+
+                                    </div>
+                                    <div class="input-group w3_w3layouts">
+                                        <span class="input-group-addon" id="sizing-addon2">入住时间</span>
+                                        <input type="date" class="form-control" placeholder="请选择日期" id="Start">
+                                    </div>
+                                    <div class="input-group w3_w3layouts">
+                                        <span class="input-group-addon" id="sizing-addon2">离店时间</span>
+                                        <input type="date" class="form-control" placeholder="请选择日期" id="End">
+
+                                    </div>
+                                    <div class="input-group w3_w3layouts">
+                                        <span class="input-group-addon" id="sizing-addon2">供应商</span>
+                                        <select class="form-control" id="Supplier">
+
+                                        </select>
+                                    </div>
+                                    <div class="input-group w3_w3layouts">
+                                        <span class="input-group-addon" id="sizing-addon2">报价</span>
+                                        <input type="text" class="form-control" id="Price">
+
+                                    </div>
+
+                                    <div class="input-group w3_w3layouts">
+                                        <span class="input-group-addon" id="sizing-addon2">币种</span>
+                                        <select class="form-control" id="Currency">
+                                            <option value="1">人民币</option>
+                                            <option value="2">港币</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group w3_w3layouts">
+                                        <span class="input-group-addon" id="sizing-addon2">汇率</span>
+                                        <input type="text" class="form-control" id="Rate">
+
+                                    </div>
+
+                                    <div class="input-group w3_w3layouts">
+                                        <span class="input-group-addon" id="sizing-addon2">类型</span>
+
+                                        <input list="answers" id="type" class="form-control">
+                                        <datalist id="answers">
+                                            <option data-value="0">酒店</option>
+                                            <option data-value="1">交通</option>
+                                            <option data-value="2">票务</option>
+                                            <option data-value="3">其他</option>
+                                        </datalist>
+                                        <input type="hidden" name="type" id="type-hidden">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" onclick="addSuppl.addSupplone()" class="btn btn-primary">
+                                        添加
+                                    </button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal -->
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>订单编号</th>
+                            <th>销售单号</th>
+                            <th>名称</th>
+                            <th>入住/离店时间</th>
+                            <th>销售商</th>
+                            <th>应收款</th>
+                            <th>待收款</th>
+                            <th>币种</th>
+                            <th>类型</th>
+                            <th>操作</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="suultestad">
+                        <tr>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>订单编号</th>
+                            <th>供应单号</th>
+                            <th>名称</th>
+                            <th>入住/离店时间</th>
+                            <th>供应商</th>
+                            <th>应付款</th>
+                            <th>待付款</th>
+                            <th>币种</th>
+                            <th>类型</th>
+                            <th>操作</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="testad">
+                        <tr>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button type="button" class="btn btn-primary" onclick="addSuppl.addSupplone()">添加供应单</button>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="../common/laydate/laydate.js"></script>
+    <!-- 改成你的路径 -->
+
+    <script src="../common/finance.js"></script>
+    <script src="../common/js/inputorder.js"></script>
+    <script>
+        lay('#version').html('-v' + laydate.v);
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#instre', //指定元素
+        });
+
+        laydate.render({
+            elem: '#instreout' //指定元素
+        });
+    </script>
+    <script>
+        localSupply("S_");
+        localAde("A_");
+        $.each(Acc, (index, ele) => {
+            var accr = `<option value="${index}">${ele}</option>`;
+            $('#account_').append(accr);
+
+        })
+        $.each(Cmp, (index, ele) => {
+            var accr = `<option value="${index}">${ele}</option>`;
+            $('#suulp').append(accr);
+
+        })
+        $.each(Cmp, (index, ele) => {
+            var accr = `<option value="${index}">${ele}</option>`;
+            $('#Supplier').append(accr);
+
+        })
+
+    </script>
+</body>
+
+</html>

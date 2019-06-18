@@ -1,0 +1,127 @@
+/* 所有样式管理 */
+/* 销售订单录入 */
+
+.sullser{
+  position:relative;margin-left: 10%;height: 30px; margin-top: 50px;
+}
+.sullseropte{
+  margin-left:115px;width:18px;overflow:hidden;height: 30px;
+}
+.selectotp{
+  width:240px;margin-left:-115px;height: 30px;
+}
+.inpurtbox{
+  width:220px;position:absolute;left:0px;height:24px;
+}
+
+/* 销售订单 */
+.inpurs {
+  border-bottom: rgb(45, 48, 48, 0.1) 1px solid;
+  margin-bottom: 20px;
+  background: #e5f3ee;
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background: none!important;
+  border: 1px solid #ddd;
+
+}
+.panel {
+  background: none !important;
+}
+.inpurs p {
+  font-size: 15px;
+  line-height: 25px;
+  margin: 0;
+  letter-spacing: 1px;
+  font-family: unset
+}
+
+.inpurs span {
+  font-size: 15px;
+  line-height: 25px;
+  /* padding-left:1em */
+}
+
+.col-sm-2,
+.col-sm-1 {
+  padding: 0;
+  height: 150px;
+}
+
+.list-group {
+  height: 150px;
+  border-radius: 0;
+}
+
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 0px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.werappsul  li{
+  display: inline-block;
+  list-style: none;
+  border-width: 1px  moccasin  solid;
+  /* border:  */
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+  width: 383px;
+}
+
+.susasd{
+  color: #0d3d88;
+  padding: 4px;
+  text-align: center;
+  margin-right: 11px;
+  margin-left: -8px;
+}
+.susasd:hover{
+  color:linen ;
+  background: #0d3d88;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+.susasdhied i{
+  /* display: none; */
+  color: limegreen
+}
+/* 订单操作付款收款界面样式 */
+.incal_search{
+  margin-bottom: 20px; 
+  font-size: 15px;
+}
+.incal_search span{
+ cursor: pointer; 
+}
+.incal_search input{
+  margin-top: 20px;
+ padding-left: 15px;
+}
+#incaipt li{
+list-style: none;
+line-height: 36px;
+}
+#incaipt input{
+  margin-top: 9px;
+}
+#incaipt select{
+  margin-top: 9px;
+}
+.incytype input{
+  width: 100px;
+    padding-left: 10px;
+    border-radius: 2px;
+    border: 1px solid #1b1919;
+}

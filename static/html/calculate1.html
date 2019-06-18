@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="../demo/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="../css/finance.css">
+  <script src="../common/js/jquery-2.1.4.min.js"></script>
+  <script src="../common/js/bootstrap.min.js"></script>
+
+  <title>已录入订单</title>
+</head>
+
+<body>
+
+  <div class="container">
+      <div class="incal_search">
+          <input type="text" name="" id="incal_cjy" placeholder="销售单号">
+          <span class="glyphicon glyphicon-search" id="oncjy"></span>
+        </div>
+     <div><p>已核计订单</p></div>
+    <p style="background: #7b7979;color:#ffffff; font-size: 16px;">销售订单</p>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>订单编号</th>
+          <th>录单时间</th>
+          <th>产品名称</th>
+          <th>客人姓名</th>
+          <th>销售平台</th>
+          <th>销售单号</th>
+          <th>应收款</th>
+          <th>待收款</th>
+          <th id="set">盈亏</th>
+          <th>操作</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody id="uesesulle">
+        <tr>
+
+        </tr>
+      </tbody>
+    </table>
+    <div>
+        <a href="../index.html">返回菜单</a>
+    </div>
+    <ul class="pagination" id="pagination2"></ul>
+  </div>
+  </div>
+
+  <script src="../common/js/jqPaginator.js"></script>
+  <script src="../common/laydate/laydate.js"></script>
+  <!-- 改成你的路径 -->
+  <script src="../common/finance.js"></script>
+  <script src="../common/js/calculate1.js"></script>
+  <script>
+    lay('#version').html('-v' + laydate.v);
+    //执行一个laydate实例
+    laydate.render({
+      elem: '#instre', //指定元素
+    });
+    laydate.render({
+      elem: '#instreout' //指定元素
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="../demo/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="../css/finance.css">
+
+  <script src="../common/js/jquery-2.1.4.min.js"></script>
+  <script src="../common/js/bootstrap.min.js"></script>
+
+  <style>
+    * {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #353535;
+      font-size: 15px;
+    }
+  </style>
+  <title>已录入供应单</title>
+</head>
+
+<body>
+  <div class="container">
+      <div>
+          <a href="../index.html">返回菜单</a>
+      </div>
+      <p style="background: rgb(182, 41, 41);color:#ffffff; font-size: 16px;">供应订单</p>
+    
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>订单编号</th>
+          <th>录单时间</th>
+          <th>产品名称</th>
+          <th>供应商</th>
+          <th>供应单号</th>
+          <th>应收款</th>
+          <th>待收款</th>
+          <th>盈亏</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody id="test">
+        <tr>
+
+        </tr>
+      </tbody>
+    </table>
+    <ul class="pagination" id="pagination2"></ul>
+
+  </div>
+  <script src="../common/js/jqPaginator.js"></script>
+  <script src="../common/laydate/laydate.js"></script>
+  <!-- 改成你的路径 -->
+  <script src="../common/finance.js"></script>
+  <!-- <script src="../common/js/Alreadyentered.js"></script> -->
+  <script>
+    lay('#version').html('-v' + laydate.v);
+    //执行一个laydate实例
+    laydate.render({
+      elem: '#instre', //指定元素
+    });
+
+    laydate.render({
+      elem: '#instreout' //指定元素
+    });
+  </script>
+  <script>
+    //已录入供应单数量 
+    allPage('/v2/supplier/order/list/number');
+    function page(data) {
+      var dataList = data.Data;
+      $.jqPaginator('#pagination2', {
+        totalPages: Math.ceil(dataList / 10),
+        visiblePages: 10,
+        currentPage: 1,
+        first: '<li class="first"><a href="javascript:void(0);">首页</a></li>',
+        prev: '<li class="prev"><a href="javascript:;">前一页</a></li>',
+        next: '<li class="next"><a href="javascript:void(0);">下一页</a></li>',
+        last: '<li class="last"><a href="javascript:void(0);">尾页</a></li>',
+        page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
+        onPageChange: function (num, type) {
+          var bankTop = localStorage.getItem("Token");
+          $.ajax({
+            url: AllUrl + '/v2/supplier/order/list/' + num,
+            async: false,//同步方式发送请求，true为异步发送
+            type: "GET",
+            headers: {
+              'authorization': bankTop
+            },
+            dataType: "json",
+            success: function (data) {
+
+              var dataList = data.Data;
+              var tr = [];
+              var Status, Type;
+              if (dataList.length > 0) {
+
+                dataList.forEach(function (ele, index) {
+                  console.log(ele)
+                  var time = getdate(ele.create_time);
+                  if (ele.cost_currency == 1) {
+                    cost_currency = 'CNY'
+                  }
+                  if (ele.cost_currency == 2) {
+                    cost_currency = 'HKD';
+                  }
+                  localAde("A_")
+                  localCompany("S_");
+                  tr += `<tr><td>${ele.sales_order_id}</td>`
+                  tr += `<td>${time}&nbsp时录入 </td>`
+                  tr += `<td>${ele.product_name}</td>`
+                  tr += `<td>${Scc[17]}</td>`
+                  tr += `<td>${ele.supplier_id}</td>`
+                  tr += `<td>${ele.cost_price}</td>`
+                  tr += `<td>${ele.cost_price}&nbsp${cost_currency}</td>`
+                  tr += `<td>${Acc[ele.supplier]}</td>`
+                  tr += `<td>${Acc[ele.operator]}</td></tr>`
+                  $("#test").html(tr);
+                })
+              }
+            },
+          })
+        }
+      });
+    }
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+document.writeln("  <div class=\'sidebar-menu\'>");
+document.writeln("    <header class=\'logo1\'>");
+document.writeln("        <a href=\'#\' class=\'sidebar-icon\'> <span class=\'fa fa-bars\'></span> </a>");
+document.writeln("    </header>");
+document.writeln("    <div style=\'border-top:1px ridge rgba(255, 255, 255, 0.15)\'></div>");
+document.writeln("    <div class=\'menu\'>");
+document.writeln("        <ul id=\'menu\'>");
+document.writeln("            <li><a href=\'../../index.html\'><i class=\'fa fa-tachometer\'></i> <span>控制台</span>");
+document.writeln("                <div class=\'clearfix\'></div>");
+document.writeln("            </a></li>");
+document.writeln("            <li class=\'menu-academico\'><a href=\'inputorder.html\'><i");
+document.writeln("                    class=\'fa fa-pencil\'></i><span>订单录入</span>");
+document.writeln("                <div class=\'clearfix\'></div>");
+document.writeln("            </a></li>");
+document.writeln("            <li class=\'menu-academico\'><a href=\'#\'><i class=\'fa fa-shopping-cart\' aria-hidden=\'true\'></i><span>销售订单管理</span>");
+document.writeln("                <span class=\'fa fa-angle-right\' style=\'float: right\'></span>");
+document.writeln("                <div class=\'clearfix\'></div>");
+document.writeln("            </a>");
+document.writeln("                <ul class=\'menu-academico-sub\'>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'Alreadyentered.html\'>已录入</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>待核计</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>已核计</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>收款中</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>已完成</a></li>");
+document.writeln("                </ul>");
+document.writeln("            </li>");
+document.writeln("            <li class=\'menu-academico\'><a href=\'#\'><i class=\'fa fa-book\'");
+document.writeln("                        aria-hidden=\'true\'></i><span>供应订单管理</span>");
+document.writeln("                <span class=\'fa fa-angle-right\' style=\'float: right\'></span>");
+document.writeln("                <div class=\'clearfix\'></div>");
+document.writeln("            </a>");
+document.writeln("                <ul class=\'menu-academico-sub\'>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'supply l_ist.html\'>已录入</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>待核计</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>已核计</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>收款中</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>已完成</a></li>");
+document.writeln("                </ul>");
+document.writeln("            </li>");
+document.writeln("");
+document.writeln("            <li class=\'menu-academico\'><a href=\'#\'><i class=\'fa fa-list-ul\'");
+document.writeln("                                                        aria-hidden=\'true\'></i><span>销售账单管理</span>");
+document.writeln("                <span class=\'fa fa-angle-right\' style=\'float: right\'></span>");
+document.writeln("                <div class=\'clearfix\'></div>");
+document.writeln("            </a>");
+document.writeln("                <ul class=\'menu-academico-sub\'>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>待审核账单</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>审核通过账单</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>收款中账单</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>未审核收款单</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>已完成销售账单</a></li>");
+document.writeln("                </ul>");
+document.writeln("            </li>");
+document.writeln("");
+document.writeln("            <li class=\'menu-academico\'><a href=\'#\'><i class=\'fa fa-list-alt\'");
+document.writeln("                                                        aria-hidden=\'true\'></i><span>供应账单管理</span>");
+document.writeln("                <span class=\'fa fa-angle-right\' style=\'float: right\'></span>");
+document.writeln("                <div class=\'clearfix\'></div>");
+document.writeln("            </a>");
+document.writeln("                <ul class=\'menu-academico-sub\'>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>待审核账单</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>审核通过账单</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>付款中账单</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>未审核付款单</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>已完成供应账单</a></li>");
+document.writeln("                </ul>");
+document.writeln("            </li>");
+document.writeln("");
+document.writeln("            <li class=\'menu-academico\'><a href=\'#\'><i class=\'fa fa-th\'");
+document.writeln("                                                        aria-hidden=\'true\'></i><span>基础信息设置</span>");
+document.writeln("                <span class=\'fa fa-angle-right\' style=\'float: right\'></span>");
+document.writeln("                <div class=\'clearfix\'></div>");
+document.writeln("            </a>");
+document.writeln("                <ul class=\'menu-academico-sub\'>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'currency.html\'>货币管理</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'Supplier.html\'>供应商管理</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'seller.html\'>销售商管理</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'bank.html\'>银行卡管理</a></li>");
+document.writeln("                </ul>");
+document.writeln("            </li>");
+document.writeln("");
+document.writeln("            <li class=\'menu-academico\'><a href=\'#\'><i class=\'fa fa-calendar\'");
+document.writeln("                                                        aria-hidden=\'true\'></i><span>报表管理</span>");
+document.writeln("                <span class=\'fa fa-angle-right\' style=\'float: right\'></span>");
+document.writeln("                <div class=\'clearfix\'></div>");
+document.writeln("            </a>");
+document.writeln("                <ul class=\'menu-academico-sub\'>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>销售月报表</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>业务月报表</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>应收报表</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>应付报表</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>支出报表</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>收入报表</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>银行对账表</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>现金对账表</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>业绩报表</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>损益表</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>资产负债表</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>总帐表</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'#\'>信用卡流水表</a></li>");
+document.writeln("                </ul>");
+document.writeln("            </li>");
+document.writeln("");
+document.writeln("            <li class=\'menu-academico\'><a href=\'#\'><i class=\'fa fa-user\' aria-hidden=\'true\'></i><span>行政</span>");
+document.writeln("                <span class=\'fa fa-angle-right\' style=\'float: right\'></span>");
+document.writeln("                <div class=\'clearfix\'></div>");
+document.writeln("            </a>");
+document.writeln("                <ul class=\'menu-academico-sub\'>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'Company.html\'>公司管理</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'alluser.html\'>用户管理</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'Logs.html\'>产品管理</a></li>");
+document.writeln("                    <li class=\'menu-academico-avaliacoes\'><a href=\'Logs.html\'>日志管理</a></li>");
+document.writeln("                </ul>");
+document.writeln("            </li>");
+document.writeln("        </ul>");
+document.writeln("    </div>");
+document.writeln("</div>");
+var toggle = true;
+$(".sidebar-icon").click(function () {
+    if (toggle) {
+        $(".page-container").addClass("sidebar-collapsed").removeClass(
+            "sidebar-collapsed-back");
+        $("#menu span").css({
+            "position": "absolute"
+        });
+    } else {
+        $(".page-container").removeClass("sidebar-collapsed").addClass(
+            "sidebar-collapsed-back");
+        setTimeout(function () {
+            $("#menu span").css({
+                "position": "relative"
+            });
+        }, 400);
+    }
+
+    toggle = !toggle;
+});
